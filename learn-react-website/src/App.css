@@ -1,46 +1,20 @@
-.NavBar {
-    background-color: #333;
-    padding: 10px;
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-    height: 15px;
-    transition: height 0.5s ease-in-out;
+::-webkit-scrollbar {
+    width: 10px;
+    visibility: visible;
 }
 
-.menu {
-    height: 100%;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: auto;
+::-webkit-scrollbar-thumb {
+    background: #888;
 }
 
-.menu .nav-icon {
-    color: #fff;
-    width: 100%;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 0;
+::-webkit-scrollbar-track {
+    background: #eee;
 }
 
-.nav-text {
-    margin-top: 5px;
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.NavBar:hover {
-    height: 40px;
-}
-
-.nav-icon:hover {
-    color: lightpink;
-}

@@ -1,24 +1,22 @@
 import { Route, Routes } from 'react-router-dom'
-import Homepage from "./pages/Homepage";
-import DashboardPage, {
-  DashboardContext,
-  DashboardCustomHooks,
-  DashboardUseState,
-  DashboardUseEffect
-} from "./pages/DashboardPage";
+import News from "./pages/News";
 import SignupForm from './pages/SignupForm'
+import AddNewsPost from "./pages/AddNews";
 import PageNotFound from "./pages/PageNotFound";
+import ProtectedRoute from "./routes/ProtectedRoute"
 
 function AppRoutes(props) {
   return (
     <Routes>
-      <Route index element={<Homepage {...props} />} />
-      <Route path="dash" element={<DashboardPage {...props} />}>
-        <Route path="UseState" element={<DashboardUseState />} />
-        <Route path="UseEffect" element={<DashboardUseEffect />} />
-        <Route path="Context" element={<DashboardContext />} />
-        <Route path="CustomHooks" element={<DashboardCustomHooks />} />
-      </Route>
+      <Route path="/" element={<News {...props} />} />
+      <Route
+        path="/AddNews"
+        element={
+          <ProtectedRoute>
+            <AddNewsPost {...props} />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/signup" element={<SignupForm {...props} />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
